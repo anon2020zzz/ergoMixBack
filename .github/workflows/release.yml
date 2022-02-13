@@ -86,10 +86,7 @@ jobs:
 
       - name: Move Jar File
         run: |
-          mv `find . -name ergoMixer-*.jar` .
-          ls -la 
-          mv ./target/scala-2.12/ergoMixer-*.jar .
-          ls -la
+          mv `find . -name ergoMixer-*.jar` ../
 
       - name: Upload JAR archive
         uses: softprops/action-gh-release@v1
@@ -154,7 +151,7 @@ jobs:
         run: |
           $Universal=".\target\universal"
           $JPBundles="$Universal\jdkpackager\bundles"
-          mv "$JPBundles\ergoMixer-*.exe" .
+          mv "$JPBundles\ergoMixer-*.exe" ../
 
       - name: Upload EXE archive
         uses: softprops/action-gh-release@v1
@@ -212,7 +209,7 @@ jobs:
         run: |
           Universal="./target/universal"
           JPBundles="$Universal/jdkpackager/bundles"
-          mv $JPBundles/ergoMixer-*.dmg .
+          mv $JPBundles/ergoMixer-*.dmg ../
 
       - name: Upload DMG archive
         uses: softprops/action-gh-release@v1
