@@ -47,7 +47,10 @@ jobs:
         scala: [2.12.10]
         java: [adopt@1.8]
     runs-on: ${{ matrix.os }}
-
+    defaults:
+      run:
+        working-directory: ./mixer
+        
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v2
@@ -101,7 +104,10 @@ jobs:
         scala: [2.12.10]
         java: ["zulu@1.8.0=zip+https://cdn.azul.com/zulu/bin/zulu8.58.0.13-ca-fx-jdk8.0.312-win_x64.zip"]
     runs-on: ${{ matrix.os }}
-
+    defaults:
+      run:
+        working-directory: ./mixer
+        
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v2
@@ -162,7 +168,10 @@ jobs:
         scala: [2.12.10]
         java: ["zulu@1.8.0=tgz+https://cdn.azul.com/zulu/bin/zulu8.50.0.21-ca-fx-jdk8.0.272-macosx_x64.tar.gz"]
     runs-on: ${{ matrix.os }}
-
+    defaults:
+      run:
+        working-directory: ./mixer
+        
     steps:
       - name: Checkout current branch (full)
         uses: actions/checkout@v2
