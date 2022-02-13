@@ -85,7 +85,11 @@ jobs:
           sbt ++${{ matrix.scala }} assembly
 
       - name: Move Jar File
-        run: mv `find . -name ergoMixer-*.jar` .
+        run: |
+          mv `find . -name ergoMixer-*.jar` .
+          ls -la 
+          mv ./target/scala-2.12/ergoMixer-*.jar .
+          ls -la
 
       - name: Upload JAR archive
         uses: softprops/action-gh-release@v1
