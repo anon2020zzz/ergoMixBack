@@ -18,6 +18,9 @@ jobs:
         scala: [2.12.10]
         java: [adopt@1.8]
     runs-on: ${{ matrix.os }}
+    defaults:
+      run:
+        working-directory: ./mixer
 
     steps:
       - name: Checkout current branch (full)
